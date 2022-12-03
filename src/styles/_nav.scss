@@ -1,0 +1,21 @@
+nav{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 8vw;
+    .nav-left{
+        display: flex;
+        align-items: center;
+        ul{
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            gap :1rem;
+            li{
+                
+            }
+
+        }
+    }
+
+}
