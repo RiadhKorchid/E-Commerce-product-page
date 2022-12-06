@@ -1,20 +1,28 @@
 nav{
-    background-color: red;
     display: flex;
     justify-content: space-between;
-    padding-inline: 8vw;
+    padding-inline: 10vw;
+    min-height: 88px;
     .nav-left{
         display: flex;
         align-items: center;
+        gap: 4rem;
         ul{
             display: flex;
             align-items: center;
             list-style-type: none;
+            color: $DarkGrayishBlue;
             gap :1rem;
-            li{
-                
-            }
-
+        }
+    }
+    .nav-right {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        .avatar{
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
 

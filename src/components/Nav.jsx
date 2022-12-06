@@ -18,7 +18,7 @@ export default function ()
 </div>
 <div className="nav-right">
 <img src={iconCart} alt="" />
-<img src={avatar} alt="" />
+<img src={avatar}  className="avatar"alt="" />
 </div>
 </nav>
     )

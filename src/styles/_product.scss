@@ -1,0 +1,92 @@
+.product{
+    display: flex;
+    align-items: center;
+    gap: 7vw;
+    padding-inline:15vw;
+    min-height: calc(100vh - 88px);
+    .left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap:3vh;
+        
+            .main-image{  
+                width: 23vw;
+                border-radius: 10px;
+                }
+            
+            .image-list{
+                display: flex;
+                gap: 1vw;
+                img{
+                    height:5vw;
+                    width:5vw;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                }
+                    .hide{
+                     opacity: 0.6;
+                }
+                 
+            }
+
+        
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        h1{
+            color: orange;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        h2{
+            width: 60%;
+            font-size: 2rem;
+        }
+        p{
+            line-height: 1.2rem;
+            font-size: 0.7rem;
+            width: 60%;
+            color: $DarkGrayishBlue;
+
+        }
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .price{
+                    font-weight: 700;
+                    font-size: 1.2rem;
+            }
+            .percent{
+                    background-color: $Paleorange;
+                    color: orange;
+                    font-size: 0.7rem;
+                    font-weight: 700;
+            }
+        }
+        .right-bottom{
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+            .add{
+                display: flex;
+                align-items: center;
+                background-color: orange;
+                padding: 0.5rem 3rem;
+                gap: 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                span{
+                    font-size: 1rem;      
+                    font-weight: 700;
+                    color: white;
+                }
+            }
+        }
+    }
+}
