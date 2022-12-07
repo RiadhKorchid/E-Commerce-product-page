@@ -12,5 +12,8 @@ $Paleorange: hsl(25, 100%, 94%);
     margin: 0px;
     font-family: 'Kumbh Sans', sans-serif;
 }
+body{
+    overflow: hidden;
+}
 @import"./nav";
 @import"./product";

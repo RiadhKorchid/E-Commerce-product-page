@@ -37,6 +37,9 @@ export  default function (){
             <div className="image-list">
                     {images.map((value, ind, array) => {
                         var x = "Image" + ind
+                        if (ind==0)
+                        return  <img src={value}  className="hide" id={x} onClick={() => active( ind )}/>
+                        else
                         return <img src={value} id={x} onClick={() => active(ind)} />
                     })
                     }

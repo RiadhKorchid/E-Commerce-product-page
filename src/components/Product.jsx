@@ -8,10 +8,12 @@ import minus from "../images/icon-minus.svg"
 import iconCart from "../images/icon-cart.svg"
 import { useState } from "react";
 import PopUp from "./PopUp"
+import Delete from "../images/icon-delete.svg"
 export default function () {
 
     const images = [product1, product2, product3, product4]
     const [index, setIndex] = useState(0)
+    const [quantity, setQuantity]= useState(0)
     function active(x) {
         setIndex(x)
         console.log(x)
@@ -19,20 +21,39 @@ export default function () {
         document.querySelector("#image1").classList.remove("hide");
         document.querySelector("#image2").classList.remove("hide");
         document.querySelector("#image3").classList.remove("hide");
-        document.querySelector("#image" + x).classList.add("hide");
+        document.querySelector("#image"+x).classList.add("hide");
 
     }
     function show() {
  document.querySelector(".pop").classList.add("show");
     }
+    function add () {
+        document.getElementById("store").innerHTML="<div  id='store'>"
+        +"<div id='command'>"+
+                "<img src="+product1+"  />"
+                +"<div id='div1'>"+
+                        "<h1>Fall Limited Edition Sneakers</h1>"
+                        +"<div id='div2'>"
+                                +"$125.00 x"+quantity +"<span>"+quantity*125+".00</span>"
++
+ "                      </div>"
+               +" </div>"
+                +"<img src="+Delete+" id='delete'/>"+
+        "</div>"+
+        "<button>Checkout</button>"
+        document.getElementById("store").classList.add("addToCart")
+    }
     return (
         <section className="product">
         <PopUp/>
             <div className="left">
-                <img src={images[index]} alt="" className="main-image" onClick={() => show()} />
+                <img src={images[index]} alt=""  className="main-image" onClick={() => show()} />
                 <div className="image-list">
                     {images.map((value, ind, array) => {
                         var x = "image" + ind
+                        if (ind==0)
+                        return  <img src={value}  className="hide" id={x} onClick={() => active( ind )}/>
+                        else
                         return <img src={value} id={x} onClick={() => active( ind )} />
                     })
                     }
@@ -46,13 +67,14 @@ export default function () {
                     <span className="price">$125.00</span>
                     <span className="percent">50%</span>
                 </div>
-
                 <div className="right-bottom">
-                    <img src={minus} alt="" />
-                    <span>0</span>
-                    <img src={plus} alt="" />
-                    <div className="add">
-                        <img src={iconCart} alt="" />
+                <div className="container">      
+                    <img src={minus} alt="" onClick={()=>(quantity>0) ?setQuantity(quantity-1) : setQuantity(0)} />
+                    <span>{quantity}</span>
+                    <img src={plus} alt=""  onClick={()=>{ setQuantity(quantity+1)}}/> 
+                    </div>
+                    <div className="add" onClick={add}>
+                        <img src={iconCart} alt=""  />
                         <span>Add to cart </span>
                     </div>
                 </div>
