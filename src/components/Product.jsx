@@ -52,9 +52,9 @@ export default function () {
                     {images.map((value, ind, array) => {
                         var x = "image" + ind
                         if (ind==0)
-                        return  <img src={value}  className="hide" id={x} onClick={() => active( ind )}/>
+                        return <div className="hide" id={x}> <img src={value}   onClick={() => active( ind )}/></div>
                         else
-                        return <img src={value} id={x} onClick={() => active( ind )} />
+                        return<div id={x}><img src={value}  onClick={() => active( ind )} /></div>
                     })
                     }
                 </div>

@@ -25,18 +25,30 @@
         .image-list {
             display: flex;
             gap: 1vw;
-
-            img {
-                height: 6vw;
-                width: 6.7vw;
-                border-radius: 5px;
+            align-items: center;
+           div{ 
                 cursor: pointer;
+                height: 12vh;
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 5px;
                 
-            }
+                
+            }}
 
             .hide {
+                border: $Orange solid;
+                border-radius: 10px;
+                background-color: white;
+                img{
+                
                 opacity: 0.5;
+                
+                
+                
             }
+        }
 
         }
      
@@ -65,7 +77,6 @@
             }
 
             .next {
-
                 right: -1.5rem; 
             }
 
@@ -76,6 +87,4 @@
     }}
 .show{
    display: block;
-
-
 }
