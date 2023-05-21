@@ -8,8 +8,10 @@ import minus from "../images/icon-minus.svg"
 import iconCart from "../images/icon-cart.svg"
 import { useState } from "react";
 import PopUp from "./PopUp"
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCartAction } from "../app/actionCreators/cartActions";
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 export default function () {
 
     const images = [product1, product2, product3, product4]
@@ -31,15 +33,15 @@ export default function () {
         document.querySelector(".pop").classList.add("show");
     }
     function add() {
-        const commande ={
-            id:1,
-            image:"../images/image-product-1.jpg",
-            title:"Fall Limited Edition Sneakers",
-            price:125,
+        const commande = {
+            id: 1,
+            image: "../images/image-product-1.jpg",
+            title: "Fall Limited Edition Sneakers",
+            price: 125,
             quantity
         }
         dispatch(addToCartAction(commande))
-        
+        toast.success("Added To Cart",{id:"add"})
     }
 
     return (
@@ -48,7 +50,7 @@ export default function () {
             <div className="left">
                 <img src={images[index]} alt="" className="main-image" onClick={() => show()} />
                 <div className="image-list">
-                    {images.map((value, ind, array) => {
+                    {images.map((value, ind) => {
                         var x = "image" + ind
                         if (ind == 0)
                             return <div className="hide" id={x}> <img src={value} onClick={() => active(ind)} /></div>
@@ -72,12 +74,14 @@ export default function () {
                         <span>{quantity}</span>
                         <img src={plus} alt="" onClick={() => { setQuantity(quantity + 1) }} />
                     </div>
-                    <div className="add" onClick={add}>
+                    <div className="add" onClick={() => (quantity != 0) ? add() : toast.error("Can't Command With Quantity=0",{id:"add"})}>
                         <img src={iconCart} alt="" />
                         <span>Add to cart </span>
                     </div>
                 </div>
             </div>
+            <Toaster position="bottom-center"/>
         </section>
+
     )
 }

@@ -15,7 +15,7 @@ export default function () {
                 <div className="bars" onClick={() => {
                     document.querySelector(".bars").classList.toggle("clicked");
                     document.querySelector(".list").classList.toggle("show");
-                    document.querySelector(".cart-container").classList.remove("cart-clicked") 
+                    document.querySelector(".cart-container").classList.remove("cart-clicked")
                 }}>
                     <div id="bar1" className="bar"></div>
                     <div id="bar2" className="bar"></div>
@@ -41,9 +41,10 @@ export default function () {
                 <div className="div">
                     <span>{count}</span>
                     <img src={iconCart} alt="" className="cart" onClick={() => {
-                            document.querySelector(".bars").classList.remove("clicked");
-                            document.querySelector(".list").classList.remove("show");
-                             document.querySelector(".cart-container").classList.toggle("cart-clicked") }} />
+                        document.querySelector(".bars").classList.remove("clicked");
+                        document.querySelector(".list").classList.remove("show");
+                        document.querySelector(".cart-container").classList.toggle("cart-clicked")
+                    }} />
                 </div>
                 <img src={avatar} className="avatar" alt="" />
                 <div className="cart-container">
