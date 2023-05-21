@@ -18,8 +18,7 @@ export default function CartMap() {
                     <span>${value.price}x{value.quantity} ${value.price * value.quantity}</span>
                 </div>
             </div>
-            <img src={Delete} className="delete" onClick={() => delete
-                Command(value.id)} />
+            <img src={Delete} className="delete" onClick={() => deleteCommand(value.id)} />
         </div>)
     )}</>
 

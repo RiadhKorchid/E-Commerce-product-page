@@ -19,8 +19,9 @@ export default function addToCartReducer(State = initialState, Action) {
                 return State
             }
         case ActionTypes.DELETE_FROM_CART:
+            const newCart =State.cart.filter((product) => Action.payload.id == product.id)
             return {
-                cart: State.cart.filter((product) => Action.payload.id != product.id),
+                cart: newCart ,
                 count: State.count - 1
             }
         default: return State
